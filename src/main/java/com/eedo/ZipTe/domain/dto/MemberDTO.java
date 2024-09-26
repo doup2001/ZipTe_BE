@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class MemberDTO extends User {
 
     private String email;
-    private String pw;
+//    private String pw;
     private String nickName;
 
     private boolean social;

@@ -1,7 +1,7 @@
 package com.eedo.ZipTe.security;
 
 import com.eedo.ZipTe.domain.dto.MemberDTO;
-import com.eedo.ZipTe.domain.entity.Member;
+import com.eedo.ZipTe.domain.entity.member.Member;
 import com.eedo.ZipTe.domain.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

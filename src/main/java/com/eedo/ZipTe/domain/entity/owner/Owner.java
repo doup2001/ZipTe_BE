@@ -1,5 +1,7 @@
-package com.eedo.ZipTe.domain.entity;
+package com.eedo.ZipTe.domain.entity.owner;
 
+import com.eedo.ZipTe.domain.entity.apt.Apt;
+import com.eedo.ZipTe.domain.entity.member.Member;
 import jakarta.persistence.*;
 
 @Entity

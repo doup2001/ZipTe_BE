@@ -1,5 +1,7 @@
-package com.eedo.ZipTe.domain.entity;
+package com.eedo.ZipTe.domain.entity.apt;
 
+import com.eedo.ZipTe.domain.entity.Address;
+import com.eedo.ZipTe.domain.entity.bulletin.Review;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

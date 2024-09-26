@@ -1,4 +1,4 @@
-package com.eedo.ZipTe.domain.entity;
+package com.eedo.ZipTe.domain.entity.owner;
 
 public enum OwnerState {
 

@@ -1,7 +1,7 @@
 package com.eedo.ZipTe.domain.repository;
 
-import com.eedo.ZipTe.domain.entity.Member;
-import com.eedo.ZipTe.domain.entity.MemberRole;
+import com.eedo.ZipTe.domain.entity.member.Member;
+import com.eedo.ZipTe.domain.entity.member.MemberRole;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
