@@ -32,5 +32,5 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Apt> apartments = new ArrayList<>();
 
-
+    private MemberRole memberRole;
 }
