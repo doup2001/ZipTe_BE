@@ -1,7 +1,9 @@
 package com.eedo.ZipTe.config;
 
+import com.eedo.ZipTe.security.filter.JWTCheckFilter;
 import com.eedo.ZipTe.security.handler.APILoginFailHandler;
 import com.eedo.ZipTe.security.handler.APILoginSuccessHandler;
+import com.eedo.ZipTe.security.handler.CustomAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -39,6 +42,11 @@ public class CustomSecurityConfig {
                         httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource()))
 
                 .csrf(csrf -> csrf.disable())
+                .exceptionHandling(config->{
+                    config.accessDeniedHandler(new CustomAccessDeniedHandler());
+
+                })
+                .addFilterBefore(new JWTCheckFilter(), UsernamePasswordAuthenticationFilter.class);
         ;
 
         return http.build();

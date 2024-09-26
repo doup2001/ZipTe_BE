@@ -1,6 +1,7 @@
 package com.eedo.ZipTe.security.handler;
 
 import com.eedo.ZipTe.domain.dto.MemberDTO;
+import com.eedo.ZipTe.security.util.JWTUtil;
 import com.google.gson.Gson;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,8 +25,11 @@ public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
         MemberDTO memberDTO = (MemberDTO) authentication.getPrincipal();
 
         Map<String, Object> claims = memberDTO.getClaims();
-        claims.put("accessToken", "");
-        claims.put("refreshToken", "");
+        claims.put("accessToken", JWTUtil.generateToken(claims,10));
+        claims.put("refreshToken", JWTUtil.generateToken(claims,24*10));
+
+        // pw정보 제거
+        claims.remove("pw");
 
         //JSon문자열로
         Gson gson = new Gson();

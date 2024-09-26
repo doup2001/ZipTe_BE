@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class MemberDTO extends User {
 
     private String email;
-//    private String pw;
+    private String pw;
     private String nickName;
 
     private boolean social;
@@ -33,6 +33,7 @@ public class MemberDTO extends User {
                 roleNames.stream().map(str -> new SimpleGrantedAuthority("ROLE_" + str)).collect(Collectors.toList()));
 
         this.email = email;
+        this.pw = pw;
         this.nickName = nickname;
         this.social = social;
         this.roleNames = roleNames;
@@ -44,6 +45,7 @@ public class MemberDTO extends User {
         Map<String, Object> dataMap = new HashMap<>();
 
         dataMap.put("email", email);
+        dataMap.put("pw", pw);
         dataMap.put("nickname", nickName);
         dataMap.put("social", social);
         dataMap.put("roleNames", roleNames);
