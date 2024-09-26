@@ -16,4 +16,6 @@ public class Owner {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "apt_code")
     private Apt apt;
+
+    private OwnerState ownerState;
 }
