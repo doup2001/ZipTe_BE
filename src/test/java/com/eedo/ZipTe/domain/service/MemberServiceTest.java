@@ -1,10 +1,9 @@
 package com.eedo.ZipTe.domain.service;
 
-import com.eedo.ZipTe.domain.dto.MemberDto;
+import com.eedo.ZipTe.domain.dto.MemberDTO;
 import com.eedo.ZipTe.domain.entity.Address;
 import com.eedo.ZipTe.domain.entity.Member;
 import com.eedo.ZipTe.domain.repository.MemberRepository;
-import com.eedo.ZipTe.domain.service.MemberService;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ class MemberServiceTest {
     @Test
     public void register() throws Exception{
         //given
-        MemberDto dto = MemberDto.builder()
+        MemberDTO dto = MemberDTO.builder()
                 .email("doup2001@naver.com")
                 .pw("1111")
                 .nickName("eedo")

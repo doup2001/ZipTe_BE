@@ -3,7 +3,7 @@ package com.eedo.ZipTe.domain.service;
 import com.eedo.ZipTe.domain.entity.Address;
 import com.eedo.ZipTe.domain.entity.Member;
 import com.eedo.ZipTe.domain.repository.MemberRepository;
-import com.eedo.ZipTe.domain.dto.MemberDto;
+import com.eedo.ZipTe.domain.dto.MemberDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,14 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
 
-    public String register(MemberDto dto) {
+    public String register(MemberDTO dto) {
         Member member = DtoToEntity(dto);
         Member saveMember = memberRepository.save(member);
         return saveMember.getEmail();
     }
 
 
-    public Member DtoToEntity(MemberDto dto) {
+    public Member DtoToEntity(MemberDTO dto) {
 
 
         Member member = Member.builder()
