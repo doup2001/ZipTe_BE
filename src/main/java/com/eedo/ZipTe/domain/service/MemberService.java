@@ -31,7 +31,7 @@ public class MemberService {
                 .pw(dto.getPw())
                 .nickName(dto.getNickName())
                 .social(dto.isSocial())
-                .Address(Address.builder()
+                .address(Address.builder()
                         .city(dto.getCity())
                         .roadName(dto.getRoadName())
                         .detail(dto.getDetail())

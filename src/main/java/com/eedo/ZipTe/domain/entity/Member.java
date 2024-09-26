@@ -26,11 +26,12 @@ public class Member {
     private boolean social;
 
     @Embedded
-    private Address Address;
+    private Address address;
 
     @Builder.Default
-    @OneToMany(mappedBy = "member")
-    private List<Apt> apartments = new ArrayList<>();
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Owner> apartments = new ArrayList<>();
 
+    @Enumerated(EnumType.STRING)
     private MemberRole memberRole;
 }

@@ -17,7 +17,7 @@ import java.util.List;
 public class Apt {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본 키 전략 추가
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;
 
     private String aptName;
@@ -25,15 +25,10 @@ public class Apt {
     @Embedded
     private Address address;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
-
     @Builder.Default
-    @OneToMany(mappedBy = "apt")
+    @OneToMany(mappedBy = "apt", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
 
     @Embedded
     private ResidenceType type;
-
 }

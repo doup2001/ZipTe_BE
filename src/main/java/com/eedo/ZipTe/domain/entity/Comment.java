@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Builder
@@ -27,6 +27,6 @@ public class Comment {
 
     private String content;
 
-    private Date CreatedDate;
-
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 }

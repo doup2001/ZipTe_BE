@@ -31,11 +31,10 @@ public class Review {
 
     private int rating;
 
-    private Date CreatedDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
     @Builder.Default
-    @OneToMany(mappedBy = "review")
+    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();
-
-
 }

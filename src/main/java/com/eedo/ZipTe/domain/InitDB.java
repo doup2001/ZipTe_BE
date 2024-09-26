@@ -30,7 +30,7 @@ public class InitDB {
                     .pw("1111")
                     .nickName("eedo")
                     .social(false)
-                    .Address(Address.builder()
+                    .address(Address.builder()
                             .roadName("장미로 55")
                             .city("경기도 성남시 ")
                             .detail("126-602")
