@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -15,15 +18,22 @@ public class Apt {
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본 키 전략 추가
-    private Long bidCode;
+    private Long code;
 
-    private String doroJuso;
+    private String aptName;
 
-    private String kaptName;
+    @Embedded
+    private Address address;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @Builder.Default
+    @OneToMany(mappedBy = "apt")
+    private List<Review> reviewList = new ArrayList<>();
+
+    @Embedded
+    private ResidenceType type;
 
 }

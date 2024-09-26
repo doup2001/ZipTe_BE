@@ -2,6 +2,7 @@ package com.eedo.ZipTe.domain;
 
 import com.eedo.ZipTe.domain.entity.Address;
 import com.eedo.ZipTe.domain.entity.Member;
+import com.eedo.ZipTe.domain.entity.MemberRole;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
@@ -30,9 +31,11 @@ public class InitDB {
                     .nickName("eedo")
                     .social(false)
                     .Address(Address.builder()
-                            .juso("경기도 성남시 장미로 55")
-                            .sebu("126-602")
-                            .zipCode(13441).build())
+                            .roadName("장미로 55")
+                            .city("경기도 성남시 ")
+                            .detail("126-602")
+                            .zipcode(13441).build())
+                    .memberRole(MemberRole.ADMIN)
                     .build();
 
             em.persist(member);

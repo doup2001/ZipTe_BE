@@ -32,9 +32,10 @@ public class MemberService {
                 .nickName(dto.getNickName())
                 .social(dto.isSocial())
                 .Address(Address.builder()
-                        .juso(dto.getJuso())
-                        .sebu(dto.getSebu())
-                        .zipCode(dto.getZipCode()).build())
+                        .city(dto.getCity())
+                        .roadName(dto.getRoadName())
+                        .detail(dto.getDetail())
+                        .zipcode(dto.getZipcode()).build())
                 .build();
 
         return member;

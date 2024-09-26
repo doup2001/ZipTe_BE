@@ -14,9 +14,12 @@ public class MemberDTO {
     private String email;
     private String pw;
     private String nickName;
+
     private boolean social;
-    private String juso;
-    private int zipCode;
-    private String sebu;
+
+    private String city;
+    private String roadName;
+    private String detail;
+    private int zipcode;
 
 }

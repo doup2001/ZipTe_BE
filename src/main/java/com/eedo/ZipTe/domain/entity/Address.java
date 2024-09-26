@@ -14,8 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Address {
 
-    private String juso;
-    private int zipCode;
-    private String sebu;
+    private String city;
+    private String roadName;
+    private String detail;
+    private int zipcode;
 
 }

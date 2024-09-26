@@ -28,9 +28,9 @@ class MemberServiceTest {
                 .pw("1111")
                 .nickName("eedo")
                 .social(false)
-                .juso("경기도 성남시 장미로 55")
-                .sebu("126-602")
-                .zipCode(13441)
+                .city("경기도 성남시 장미로 55")
+                .detail("126-602")
+                .zipcode(13441)
                 .build();
 
         //when
@@ -40,9 +40,9 @@ class MemberServiceTest {
                 .nickName(dto.getNickName())
                 .social(dto.isSocial())
                 .Address(Address.builder()
-                        .juso(dto.getJuso())
-                        .sebu(dto.getSebu())
-                        .zipCode(dto.getZipCode()).build())
+                        .juso(dto.getCity())
+                        .sebu(dto.getDetail())
+                        .zipCode(dto.getZipcode()).build())
                 .build();
 
         //then
