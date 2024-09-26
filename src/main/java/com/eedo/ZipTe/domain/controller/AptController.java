@@ -16,7 +16,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @Log4j2
-@RequestMapping("/apt")
+@RequestMapping("/api/apt")
 public class AptController {
 
     // RestTemplate Bean 생성 (또는 @Autowired로 주입할 수 있음)
