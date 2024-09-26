@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Apt {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본 키 전략 추가
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본 키 전략 추가
     private Long bidCode;
 
     private String doroJuso;
