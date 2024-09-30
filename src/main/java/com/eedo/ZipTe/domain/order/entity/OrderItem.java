@@ -23,12 +23,8 @@ public class OrderItem {
     @JoinColumn(name = "item_id")
     private Item item;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "order_id")
-//    private Order order;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name ="order_id")
     private Order order;
 
     private int orderPrice;
@@ -36,27 +32,30 @@ public class OrderItem {
     private int count;
 
 
+    //비즈니스 로직
+    public void addOrder(Order order){
+        this.order = order;
+    }
 
-//    public void addOrder(Order order){
-//        this.order = order;
-//    }
-//
-//    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
-//
-//        OrderItem orderItem = OrderItem.builder()
-//                .item(item)
-//                .orderPrice(orderPrice)
-//                .count(count)
-//                .build();
-//
-//        item.removeStock(count);
-//
-//        return orderItem;
-//    }
-//
-//    public int cancel() {
-//        getItem().addStock(count);
-//        return count;
-//    }
+    public int cancel() {
+        getItem().addStock(count);
+        return count;
+    }
+
+
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+
+        OrderItem orderItem = OrderItem.builder()
+                .item(item)
+                .orderPrice(orderPrice)
+                .count(count)
+                .build();
+
+        item.removeStock(count);
+
+        return orderItem;
+    }
+
+
 
 }

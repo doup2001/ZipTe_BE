@@ -43,30 +43,30 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Order> orderList = new ArrayList<>();
 
-}
 
-//    // 비즈니스 모델
-//    public void addRole(MemberRole memberRole) {
-//        this.memberRoleList.add(memberRole);
-//    }
-//
-////    public void clearRole() {
-////        this.memberRoleList.clear();
-////    }
-////
-////    public void changePw(String pw) {
-////        this.pw = pw;
-////    }
-////
-////    public void changeNickName(String nickName) {
-////        this.nickName = nickName;
-////    }
-////
-////    public void changeSocial(boolean social) {
-////        this.social = social;
-////    }
-//
-//    public void addOrder(Order order){
-//        this.orderList.add(order);
-//    }
-//}
+    // 비즈니스 모델
+
+    public void addRole(MemberRole memberRole) {
+        this.memberRoleList.add(memberRole);
+    }
+    public void clearRole() {
+        this.memberRoleList.clear();
+    }
+
+    public void changePw(String pw) {
+        this.pw = pw;
+    }
+
+    public void changeNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public void changeSocial(boolean social) {
+        this.social = social;
+    }
+
+    public void addOrder(Order order){
+        this.orderList.add(order);
+    }
+
+}

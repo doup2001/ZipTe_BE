@@ -29,7 +29,7 @@ public class Delivery {
     private DeliveryStatus deliveryStatus;
 
 //    비즈니스 모델
-//    public void addOrder(Order order){
-//        this.order = order;
-//    }
+    public void addOrder(Order order){
+        this.order = order;
+    }
 }
