@@ -1,6 +1,6 @@
 package com.eedo.ZipTe.security.filter;
 
-import com.eedo.ZipTe.domain.dto.MemberDTO;
+import com.eedo.ZipTe.domain.member.dto.MemberDTO;
 import com.eedo.ZipTe.security.util.JWTUtil;
 import com.google.gson.Gson;
 import jakarta.servlet.FilterChain;
