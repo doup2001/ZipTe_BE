@@ -23,6 +23,10 @@ public class Item {
     private int price;
 
     private int stockQuantity;
+    private String pdesc;
+
+    private boolean delFlag;
+
 
 
     // 비즈니스 로직
