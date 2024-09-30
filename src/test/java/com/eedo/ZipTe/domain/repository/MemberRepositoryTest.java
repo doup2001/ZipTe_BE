@@ -1,16 +1,7 @@
 package com.eedo.ZipTe.domain.repository;
 
-import com.eedo.ZipTe.domain.member.entity.member.Member;
-import com.eedo.ZipTe.domain.member.entity.member.MemberRole;
-import com.eedo.ZipTe.domain.member.repo.MemberRepository;
 import lombok.extern.log4j.Log4j2;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.Optional;
 
 //import static org.junit.jupiter.api.Assertions.*;
 

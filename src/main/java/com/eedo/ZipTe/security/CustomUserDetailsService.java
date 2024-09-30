@@ -1,8 +1,8 @@
 package com.eedo.ZipTe.security;
 
-import com.eedo.ZipTe.domain.member.dto.MemberDTO;
-import com.eedo.ZipTe.domain.member.entity.member.Member;
-import com.eedo.ZipTe.domain.member.repo.MemberRepository;
+import com.eedo.ZipTe.domain.dto.MemberDTO;
+import com.eedo.ZipTe.domain.entity.member.Member;
+import com.eedo.ZipTe.domain.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.userdetails.UserDetails;
