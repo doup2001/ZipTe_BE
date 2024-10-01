@@ -37,12 +37,7 @@ public class JWTCheckFilter extends OncePerRequestFilter {
             return true;
         }
 
-//        if(path.startsWith("/api/apt/")) {
-//            return true;
-//        }
-
-        //이미지 조회 경로는 체크하지 않는다면
-        if(path.startsWith("/api/products/view/")) {
+        if(path.startsWith("/api/item/")) {
             return true;
         }
 
