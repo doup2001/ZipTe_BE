@@ -1,7 +1,7 @@
 package com.eedo.ZipTe.domain.entity.apt;
 
-import com.eedo.ZipTe.domain.entity.Address;
 import com.eedo.ZipTe.domain.entity.bulletin.Review;
+import com.eedo.ZipTe.domain.entity.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +19,7 @@ import java.util.List;
 public class Apt {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;
 
     private String aptName;

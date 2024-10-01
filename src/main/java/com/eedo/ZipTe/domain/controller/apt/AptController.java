@@ -1,4 +1,4 @@
-package com.eedo.ZipTe.domain.controller;
+package com.eedo.ZipTe.domain.controller.apt;
 
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
