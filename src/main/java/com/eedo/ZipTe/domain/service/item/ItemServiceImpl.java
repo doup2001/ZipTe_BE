@@ -5,6 +5,7 @@ import com.eedo.ZipTe.domain.dto.PageRequestDTO;
 import com.eedo.ZipTe.domain.dto.PageResponseDTO;
 import com.eedo.ZipTe.domain.entity.item.Item;
 import com.eedo.ZipTe.domain.repository.ItemRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
@@ -13,9 +14,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 @Log4j2
 public class ItemServiceImpl implements ItemService {
 
@@ -47,9 +50,26 @@ public class ItemServiceImpl implements ItemService {
         return new  PageResponseDTO<ItemDto>(dtoList, pageRequestDTO, total);
     }
 
+    @Override
+    public ItemDto getOne(Long id) {
+        Optional<Item> result = itemRepository.findById(id);
+        Item item = result.orElseThrow();
 
+        return entityToDTO(item);
+    }
 
+    @Override
+    public Long deleteOne(Long id) {
+        Optional<Item> result = itemRepository.findById(id);
+        Item item = result.orElseThrow();
+        item.deleteOne();
 
+        if (item.isDelFlag()) {
+            return -1L;
+        }
+
+        return item.getId();
+    }
 
 
 }

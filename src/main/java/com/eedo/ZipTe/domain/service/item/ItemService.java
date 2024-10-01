@@ -14,6 +14,10 @@ public interface ItemService {
 
     PageResponseDTO<ItemDto> getList(PageRequestDTO pageRequestDTO);
 
+    ItemDto getOne(Long id);
+
+    Long deleteOne(Long id);
+
     default Item dtoToEntity(ItemDto dto) {
         Item item = Item.builder()
                 .id(dto.getId())
